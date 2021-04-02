@@ -3,15 +3,29 @@ import './App.css';
 import Header from './components/Header.js'
 import BookList from './components/BookList.js'
 import Shelf from './components/Shelf.js'
+import data from './components/data.js'
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <BookList/>
-      <Shelf/>
-    </div>
-  );
+export default class App extends React.Component {
+  constructor (){
+    super();
+  }
+
+
+  state = {
+    books: data.data
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+        <Header/>
+        <BookList/>
+        <Shelf/>
+      </div>
+    );
+  }  
 }
 
-export default App;
+
